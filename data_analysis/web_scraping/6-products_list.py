@@ -5,7 +5,7 @@ import time
 from selenium import webdriver
 
 
-def scrape_products_list(url):
+def scrape_products(url):
     """Scrape product details from a static e-commerce page."""
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
