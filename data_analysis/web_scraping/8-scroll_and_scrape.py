@@ -113,7 +113,13 @@ def scroll_and_scrape(url, scroll_pause=2.0):
 
             if key not in seen:
                 seen.add(key)
-                products.append(product)
+
+                products.append({
+                    "title": product["title"],
+                    "price": product["price"],
+                    "description": product["description"],
+                    "rating": product["rating"]
+                })
 
         return products
     finally:
