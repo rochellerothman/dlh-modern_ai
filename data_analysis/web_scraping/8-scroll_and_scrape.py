@@ -16,7 +16,6 @@ def scroll_and_scrape(url, scroll_pause=2.0):
 
     try:
         driver.get(url)
-        time.sleep(scroll_pause)
 
         last_height = driver.execute_script(
             "return document.body.scrollHeight"
@@ -26,6 +25,7 @@ def scroll_and_scrape(url, scroll_pause=2.0):
             driver.execute_script(
                 "window.scrollTo(0, document.body.scrollHeight);"
             )
+
             time.sleep(scroll_pause)
 
             new_height = driver.execute_script(
