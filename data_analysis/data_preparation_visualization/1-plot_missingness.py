@@ -20,5 +20,8 @@ def plot_missingness(df):
         df.columns
     )
 
+    plt.title("Missingness Plot")
+
     plt.tight_layout()
     plt.show()
+
