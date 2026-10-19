@@ -22,6 +22,5 @@ def plot_correlation_heatmap(df):
     )
 
     plt.title('Correlation Matrix')
-    plt.tight_layout()
     plt.savefig('Task_9.png')
     plt.show()
