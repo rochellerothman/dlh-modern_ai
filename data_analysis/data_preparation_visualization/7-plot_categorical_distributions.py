@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Plot the distributions of categorical features."""
+"""Plot distributions of categorical variables."""
 
 import matplotlib.pyplot as plt
 
 
 def plot_categorical_distributions(df, columns_to_plot=None):
-    """Display categorical feature distributions in a grid."""
+    """Plot categorical features in a grid of bar charts."""
     if columns_to_plot is None:
         columns_to_plot = df.select_dtypes(
             include=['object']
@@ -19,14 +19,16 @@ def plot_categorical_distributions(df, columns_to_plot=None):
 
     axes = axes.flatten()
 
-    for i, column in enumerate(columns_to_plot):
-        df[column].value_counts().plot(
+    for i, col in enumerate(columns_to_plot):
+        df[col].value_counts().plot(
             kind='bar',
-            ax=axes[i]
+            ax=axes[i],
+            color='skyblue'
         )
-        axes[i].set_title(column)
-        axes[i].set_xlabel('')
-        axes[i].tick_params(axis='x', labelrotation=45)
+        axes[i].set_title(f'Distribution of {col}')
+        axes[i].set_xlabel(col)
+        axes[i].set_ylabel('Count')
+        axes[i].tick_params(axis='x', rotation=45)
 
     for i in range(len(columns_to_plot), len(axes)):
         fig.delaxes(axes[i])
