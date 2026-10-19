@@ -13,19 +13,20 @@ def encode_features(df):
     df['Churn'] = churn_le.fit_transform(df['Churn'])
 
     binary_columns = [
-        'SeniorCitizen',
         'Partner',
         'Dependents',
-        'PaperlessBilling'
+        'PaperlessBilling',
+        'SeniorCitizen'
     ]
 
     binary_oe = preprocessing.OrdinalEncoder(
-        categories=[['No', 'Yes']] * len(binary_columns)
+        categories=[['No', 'Yes']]
     )
 
-    df[binary_columns] = binary_oe.fit_transform(
-        df[binary_columns]
-    ).astype(int)
+    for column in binary_columns:
+        df[column] = binary_oe.fit_transform(
+            df[[column]]
+        ).astype(int)
 
     tenure_oe = preprocessing.OrdinalEncoder()
     df['TenureGroup'] = tenure_oe.fit_transform(
