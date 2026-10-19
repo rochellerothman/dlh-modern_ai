@@ -1,4 +1,3 @@
-cat > 1-plot_missingness.py <<'PY'
 #!/usr/bin/env python3
 """Module for visualizing missing values in a DataFrame."""
 
@@ -24,4 +23,3 @@ def plot_missingness(df):
 
     plt.tight_layout()
     plt.show()
-PY
