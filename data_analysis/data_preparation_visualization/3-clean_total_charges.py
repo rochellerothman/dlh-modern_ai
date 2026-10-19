@@ -1,5 +1,5 @@
 
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 """Handle missing values in the TotalCharges column."""
 
 
@@ -20,4 +20,3 @@ def clean_total_charges(df, method='drop'):
         )
 
     return df
-
