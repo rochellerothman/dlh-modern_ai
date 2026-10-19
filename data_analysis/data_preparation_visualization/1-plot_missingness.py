@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """Module for visualizing missing values in a DataFrame."""
 
@@ -9,15 +10,10 @@ def plot_missingness(df):
     """Visualize missing values in a DataFrame."""
     plt.figure(figsize=(12, 8))
 
-    missing = df.isnull()
+    missing = df.isnull().to_numpy()
+    rows, cols = np.where(missing)
 
-    for i, column in enumerate(df.columns):
-        rows = np.where(missing[column])[0]
-        plt.scatter(
-            rows,
-            np.full(len(rows), i),
-            marker='|'
-        )
+    plt.scatter(rows, cols, marker='|')
 
     plt.yticks(
         np.arange(len(df.columns)),
