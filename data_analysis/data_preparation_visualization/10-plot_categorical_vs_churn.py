@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
-"""Visualize churn rates across categorical features."""
+"""Plot churn rates for categorical features."""
 
 import matplotlib.pyplot as plt
 
 
 def plot_categorical_vs_churn(df, col):
-    """Plot the proportion of churned customers by category."""
+    """Display the churn rate for each category."""
     churn_rates = df.groupby(col)['Churn'].apply(
         lambda values: (values == 'Yes').mean()
     )
 
     plt.figure(figsize=(12, 8))
-    churn_rates.plot(kind='bar')
-
+    plt.bar(churn_rates.index, churn_rates.values)
     plt.title(f'Churn Rate by {col}')
     plt.ylabel('Churn Rate')
     plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig('Task_10.png')
     plt.show()
