@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Initialize boosting classifiers using Scikit-learn and boosting libraries."""
+"""Initialize boosting classifiers."""
 
 from sklearn import ensemble
 import xgboost as xgb
