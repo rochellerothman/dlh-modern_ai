@@ -17,4 +17,4 @@ def draw(clf, feature_names, class_names):
             'class: {}'.format(name)
         )
 
-    print(rules, end='')
+    print(rules)
