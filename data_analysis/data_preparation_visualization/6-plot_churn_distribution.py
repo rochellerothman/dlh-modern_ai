@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 def plot_churn_distribution(df):
-    """Display a bar chart of customer churn counts."""
+    """Display a bar chart of churn counts."""
     plt.figure(figsize=(12, 8))
 
     counts = df['Churn'].value_counts()
@@ -17,6 +17,5 @@ def plot_churn_distribution(df):
 
     plt.title('Churn Distribution')
     plt.ylabel('Count')
-    plt.tight_layout()
     plt.show()
 
