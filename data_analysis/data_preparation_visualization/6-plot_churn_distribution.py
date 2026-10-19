@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Plot the distribution of customer churn."""
 
@@ -18,4 +17,3 @@ def plot_churn_distribution(df):
     plt.title('Churn Distribution')
     plt.ylabel('Count')
     plt.show()
-
