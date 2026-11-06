@@ -4,8 +4,9 @@
 from tensorflow import keras
 
 
-def train_with_gradient_descent_variant(variant, learning_rate,
-                                       x_train, batch_size):
+def train_with_gradient_descent_variant(
+    variant, learning_rate, x_train, batch_size
+):
     """Return an SGD optimizer and batch size for the selected variant.
 
     Args:
